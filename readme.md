@@ -1,4 +1,4 @@
-#Tic Tac Toe Game on C++
+##Tic Tac Toe Game on C++
 
 This is the standard game of tic tac toe on C++. 
 
