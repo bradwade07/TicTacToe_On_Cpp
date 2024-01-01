@@ -17,5 +17,6 @@ int main(){
     cin >> p2Name;
     cout << endl;
     Game* game = new Game(p1Name, p2Name);
+    game->gameGo();
     return 0;
 }
