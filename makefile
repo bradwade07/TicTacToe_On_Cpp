@@ -13,4 +13,4 @@ cell.o: cell.cpp
 	g++ -c -Wall cell.cpp
 
 clean:	
-	rm -f gameRunner *.o
+	rm -f a.out *.o
