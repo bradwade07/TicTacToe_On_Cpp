@@ -1,4 +1,3 @@
-// 
 #include <iostream>
 #include "game.cpp"
 using std::cout;
@@ -10,10 +9,10 @@ int main(){
     cout << "Welcome To Tic-Tac-Toe" << endl;
     string p1Name, p2Name;
     //Entering Player Names
-    cout << "Please enter player 1 name:";
+    cout << "Please enter player 1 name (player move: X): ";
     cin >> p1Name;
     cout << endl;
-    cout << "Please enter player 2 name:";
+    cout << "Please enter player 2 name (player move: O): ";
     cin >> p2Name;
     cout << endl;
     Game* game = new Game(p1Name, p2Name);
