@@ -41,9 +41,9 @@ class Game{
     }
 
     void askMoveP1(){ //move for p1
-        string p1RowString, p1ColString;
+        char p1RowString, p1ColString;
         int p1Row,p1Col;
-        bool possible;
+        bool possible, outRange;
         do{
             do{
                 cout << p1 << " (who is X), please enter your row and column values (between 1 and 3):" << endl << endl;
@@ -52,17 +52,24 @@ class Game{
                 cout << "Enter Col: ";
                 cin >> p1ColString;
                 cout << endl;
-                p1Row = stoi(p1RowString);
-                p1Col = stoi(p1ColString);
-            }while(p1Row < 1 || p1Row > 3 || p1Col < 1 || p1Col > 3);
+                p1Row = p1RowString - 48;
+                p1Col = p1ColString - 48;
+                if(p1Row < 1 || p1Row > 3 || p1Col < 1 || p1Col > 3){
+                    outRange = false;
+                    cout << "Incorrect Value! Please try again!" << endl << endl;
+                }
+                else{
+                    outRange = true;
+                }
+            }while(!outRange);
             possible = makeMove(p1Row, p1Col, Cross); // if the move is possible or not. If is, makes it
         }while(!possible);
     }
 
     void askMoveP2(){ //move for p2
-        string p2RowString, p2ColString;
+        char p2RowString, p2ColString;
         int p2Row,p2Col;
-        bool possible;
+        bool possible, outRange;
         do{
             do{
                 cout << p2 << " (who is O), please enter your row and column values (between 1 and 3):" << endl << endl;
@@ -71,9 +78,16 @@ class Game{
                 cout << "Enter Col: ";
                 cin >> p2ColString;
                 cout << endl;
-                p2Row = stoi(p2RowString);
-                p2Col = stoi(p2ColString);
-            }while(p2Row < 1 || p2Row > 3 || p2Col < 1 || p2Col > 3);
+                p2Row = p2RowString - 48;
+                p2Col = p2ColString - 48;
+                if(p2Row < 1 || p2Row > 3 || p2Col < 1 || p2Col > 3){
+                    outRange = false;
+                    cout << "Incorrect Value! Please try again!" << endl << endl;
+                }
+                else{
+                    outRange = true;
+                }
+            }while(!outRange);
             possible = makeMove(p2Row, p2Col, Circle); // if the move is possible or not. If is, makes it
         }while(!possible);
     }
