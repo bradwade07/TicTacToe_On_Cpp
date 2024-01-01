@@ -1,7 +1,7 @@
-all: gameRuner
+all: a.out
 
-gameRunner: cell.o game.o main.o
-	g++ -o gameRunner -Wall cell.o game.o main.o
+a.out: cell.o game.o main.o
+	g++ -Wall cell.o game.o main.o -o a.out
 	
 main.o: main.cpp 
 	g++ -c -Wall main.cpp

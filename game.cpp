@@ -29,23 +29,30 @@ class Game{
     }
 
     void gameGo(){
-        // bool gameWinState = false;
-        // while(!gameWinState){
-
-        // }
-        gamePrinter();
+        bool gameWinState = false;
+        while(!gameWinState){
+            
+            gamePrinter();
+        }
     }
 
     void gamePrinter(){
-        for(int i =0; i < SIZE; i++){
-            cout << "|";
-            for(int j =0; j < SIZE; j++){
+        for(int i =0; i < SIZE;){
+            for(int j =0; j < SIZE;){
                 if(board[j][i].getMove() == Empty){ cout << " ";}
                 else if(board[j][i].getMove() == Cross){ cout << "X";}
                 else if(board[j][i].getMove() == Circle){ cout << "O";}
+                j++;
+                if(j < SIZE){
                 cout << "|";
             }
+            }
             cout << endl;
+            i++;
+            if(i < SIZE){
+                cout << "-----" << endl;
+            }
         }
+        cout << endl;
     }
 };
