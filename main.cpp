@@ -1,4 +1,6 @@
+// 
 #include <iostream>
+#include "game.cpp"
 using std::cout;
 using std::endl;
 using std::cin;
@@ -14,6 +16,6 @@ int main(){
     cout << "Please enter player 2 name:";
     cin >> p2Name;
     cout << endl;
-    
+    Game* game = new Game(p1Name, p2Name);
     return 0;
 }

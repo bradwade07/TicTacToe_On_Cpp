@@ -2,14 +2,16 @@
 using std::string;
 
 //Move of each cell
-enum Move {circle, Cross, Empty};
+enum Move {Circle, Cross, Empty};
 
 class Cell{
     private:
     Move move;
 
     public:
-
+    Cell(){
+        this->move = Empty;
+    }
     Move getMove(){
         return this->move;
     }
